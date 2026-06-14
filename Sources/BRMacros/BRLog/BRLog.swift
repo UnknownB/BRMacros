@@ -128,6 +128,10 @@ public enum BRLog {
     nonisolated(unsafe) public static var onOutput: ((BRLogInfo) -> Void)? = nil
     
     
+    /// 透過 #BRLog 印出訊息時，將自動套用此規則屏蔽資訊
+    nonisolated(unsafe) public static var maskingRules: [BRLogInfo.MaskingRule] = []
+    
+    
 }
 
 
