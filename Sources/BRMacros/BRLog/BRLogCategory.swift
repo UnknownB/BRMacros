@@ -11,7 +11,7 @@ import OSLog
 
 /// 自定義 Log 類型，可依需求進行擴充，預設提供 UI、IO、Core、Test、Network、Library
 public struct BRLogCategory: Hashable, Equatable, RawRepresentable, ExpressibleByStringLiteral, Sendable {
-    public static let subsystem = Bundle.main.bundleIdentifier!
+    public static let subsystem = Bundle.main.bundleIdentifier ?? ProcessInfo.processInfo.processName
     public var rawValue: String
     
     public init(rawValue: String) {
