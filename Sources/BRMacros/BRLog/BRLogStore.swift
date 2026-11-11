@@ -133,9 +133,7 @@ public enum BRLogStore {
         let offset = max(0, fileSize - Int64(maxBytes))
         
         try? handle.seek(toOffset: UInt64(offset))
-        guard let data = try? handle.readDataToEndOfFile() else {
-            return ""
-        }
+        let data = handle.readDataToEndOfFile()
         
         guard var text = String(data: data, encoding: .utf8) else {
             return ""
